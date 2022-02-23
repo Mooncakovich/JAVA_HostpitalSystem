@@ -224,8 +224,9 @@ public class Main {
         cost = scanner.nextInt();
         dbHandler.AddDrug(name, cost, prescription);
     }
-    public static void deleteDrug(String name){
-
+public static void deleteDrug(String name){
+        DatabaseHandler dbHandler = new DatabaseHandler();
+        dbHandler.deleteDrug(name);
     }
     public static void showDrugs(String name) {
     }
