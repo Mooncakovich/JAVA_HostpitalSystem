@@ -140,4 +140,17 @@ public class DatabaseHandler extends Config {
             e.printStackTrace();
         }
     };
+    public void deletePatients(String name, String surname){
+        String insert = "DELETE FROM " + Constant.PATIENTS_TABLE +" WHERE " + Constant.PATIENTS_FIRSTNAME + " = " + "'" + name +"'"
+                + " AND " + Hospital.Constant.PATIENTS_SURNAME + " = " + "'" + surname + "'" ;
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(insert);
+            prSt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Record with name " + name + " successfully deleted.");
+    };
 }
