@@ -38,8 +38,9 @@ public class DatabaseHandler extends Config {
             e.printStackTrace();
         }
     };
-    public void deleteDoctor(String name){
-        String insert = "DELETE FROM " + Constant.DOCTORS_TABLE +" WHERE " + Constant.DOCTORS_FIRSTNAME + " = " + "'" + name +"'";
+    public void deleteDoctor(String name, String surname){
+        String insert = "DELETE FROM " + Constant.DOCTORS_TABLE +" WHERE " + Constant.DOCTORS_FIRSTNAME + " = " + "'" +
+                name +"' AND " + Constant.DOCTORS_SURNAME + " = " + "'" +  surname + "'";
         try {
             PreparedStatement prSt = getDbConnection().prepareStatement(insert);
             prSt.executeUpdate();
