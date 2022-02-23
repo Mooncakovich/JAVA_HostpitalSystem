@@ -137,16 +137,18 @@ public class Main {
                 addPatient();
                 break;
             case 2:
+                Scanner scanne = new Scanner(System.in);
                 System.out.println("Enter patient's name:");
-                name = scanner.nextLine();
+                name = scanne.nextLine();
                 deletePatient(name);
                 break;
             case 3:
                 showPatients("*");
                 break;
             case 4:
+                Scanner scann = new Scanner(System.in);
                 System.out.println("Enter patient's name:");
-                name = scanner.nextLine();
+                name = scann.nextLine();
                 showPatients(name);
             case 5:  System.exit(0);
                 break;
@@ -196,16 +198,18 @@ public class Main {
                 addDrug();
                 break;
             case 2:
+                Scanner scanne = new Scanner(System.in);
                 System.out.println("Enter drug's name:");
-                name = scanner.nextLine();
+                name = scanne.nextLine();
                 deleteDrug(name);
                 break;
             case 3:
                 showDrugs("*");
                 break;
             case 4:
+                Scanner scann = new Scanner(System.in);
                 System.out.println("Enter drug's name:");
-                name = scanner.nextLine();
+                name = scann.nextLine();
                 showDrugs(name);
             case 5:  System.exit(0);
                 break;
