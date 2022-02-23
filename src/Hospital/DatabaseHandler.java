@@ -108,6 +108,17 @@ public class DatabaseHandler extends Config {
             e.printStackTrace();
         }
     };
+    public void deleteDrug(String name) {
+        String delete = "DELETE FROM " + Constant.DRUGS_TABLE + " WHERE " + Constant.DRUGS_NAME + "=" + "'" + name +"'";
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(delete);
+            prSt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    };
 
     public void AddPatients(String firstName, String SureName,int age, String MedicalChamber, String MedicalInsurance, String Diagnosis){
         String insert = "INSERT INTO " + Constant.PATIENTS_TABLE+ "("+Constant.PATIENTS_FIRSTNAME + "," + Constant.PATIENTS_SURNAME + ","  + Constant.PATIENTS_AGE
