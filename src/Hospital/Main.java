@@ -175,8 +175,9 @@ public class Main {
         age = scanner.nextInt();
         dbHandler.AddPatients(firstName,SureName, age, MedicalChamber, MedicalInsurance, Diagnosis);
     }
-    public static void deletePatient(String name){
-
+   public static void deletePatient(String name, String surname){
+        DatabaseHandler dbHandler = new DatabaseHandler();
+        dbHandler.deletePatients(name,surname);
     }
     public static void showPatients(String name){
 
