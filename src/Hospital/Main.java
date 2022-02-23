@@ -179,8 +179,9 @@ public class Main {
         DatabaseHandler dbHandler = new DatabaseHandler();
         dbHandler.deletePatients(name,surname);
     }
-    public static void showPatients(String name){
-
+    public static void showPatients(){
+        DatabaseHandler dbHandler = new DatabaseHandler();
+        dbHandler.showPatients();
     }
 
     public static void drugsDB(){
