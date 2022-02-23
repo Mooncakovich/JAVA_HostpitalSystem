@@ -67,9 +67,11 @@ public class Main {
                 break;
             case 2:
                 Scanner scan = new Scanner(System.in);
-                System.out.println("Enter doctor's name:");
+                System.out.println("Enter doctor's first name:");
                 name = scan.nextLine();
-                deleteDoctor(name);
+                System.out.println("Enter doctor's surname:");
+                surname = scan.nextLine();
+                deleteDoctor(name, surname);
                 break;
             case 3:
                 showDoctors();
@@ -106,9 +108,9 @@ public class Main {
         i4 = scanner.nextInt();
         dbHandler.AddDoctor(s1, s2, i2, s3, i4, i3);
     }
-    public static void deleteDoctor(String name){
+    public static void deleteDoctor(String name, String surname){
         DatabaseHandler dbHandler = new DatabaseHandler();
-        dbHandler.deleteDoctor(name);
+        dbHandler.deleteDoctor(name, surname);
     }
     public static void showDoctors(){
         DatabaseHandler dbHandler = new DatabaseHandler();
