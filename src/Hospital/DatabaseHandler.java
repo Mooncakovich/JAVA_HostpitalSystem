@@ -171,4 +171,24 @@ public class DatabaseHandler extends Config {
         }
         System.out.println("Record with name " + name + " successfully deleted.");
     };
+    
+    public void showPatients(){
+        String show2 = "SELECT * FROM " + Constant.PATIENTS_TABLE;
+        int i=0;
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(show2);
+            ResultSet reSt = prSt.executeQuery(show2);
+            System.out.println( "idPatients Firstname Surename Age Medical Chamber Medical Insurance Diagnosis ");
+            while (reSt.next()){
+                System.out.println(reSt.getString("idPatients") + " " +
+                                reSt.getString("Firstname") + " " + reSt.getString("Surname") + " " +
+                        reSt.getString("Age") + " " + reSt.getString("Medical Chamber")+ " " +
+                                reSt.getString("MedicalInsurance")+ " " + reSt.getString("Diagnosis") );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }
