@@ -127,7 +127,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         DatabaseHandler dbHandler = new DatabaseHandler();
         int ctrl;
-        String name;
+        String name, surname;
         System.out.println("Welcome to Patients DB");
         System.out.println("What is your aim?");
         System.out.println("1) Add new record");
@@ -142,18 +142,23 @@ public class Main {
                 break;
             case 2:
                 Scanner scanne = new Scanner(System.in);
-                System.out.println("Enter patient's name:");
+                System.out.println("Enter patient's first name:");
                 name = scanne.nextLine();
-                deletePatient(name);
+                System.out.println("Enter patient's surname:");
+                surname = scanne.nextLine();
+                deletePatient(name, surname);
                 break;
             case 3:
-                showPatients("*");
+                showPatients();
                 break;
             case 4:
                 Scanner scann = new Scanner(System.in);
                 System.out.println("Enter patient's name:");
                 name = scann.nextLine();
-                showPatients(name);
+                System.out.println("Enter patient's surname:");
+                surname = scann.nextLine();
+                findPatients(name, surname);
+                break;
             case 5:  System.exit(0);
                 break;
         }
@@ -220,7 +225,8 @@ public class Main {
                 Scanner scann = new Scanner(System.in);
                 System.out.println("Enter drug's name:");
                 name = scann.nextLine();
-                showDrugs(name);
+                findDrugs(name);
+                break;
             case 5:  System.exit(0);
                 break;
         }
