@@ -185,6 +185,10 @@ public class Main {
         DatabaseHandler dbHandler = new DatabaseHandler();
         dbHandler.showPatients();
     }
+    public static void findPatients(String name, String surname){
+    DatabaseHandler dbHandler = new DatabaseHandler();
+    dbHandler.findPatient(name,surname);
+}
 
     public static void drugsDB(){
         Scanner scanner = new Scanner(System.in);
