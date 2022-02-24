@@ -10,17 +10,17 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         DatabaseHandler dbHandler = new DatabaseHandler();
-        int ctrl = 1;
+        int mctrl = 1;
         String name;
         System.out.println("Welcome to the hospital management system");
-        while (ctrl == 1) {
+        while (mctrl == 1) {
             System.out.println("What DB you want to get access to?");
             System.out.println("1) Doctors");
             System.out.println("2) Drugs");
             System.out.println("3) Patients");
             System.out.println("4) Stop session");
-            ctrl = scanner.nextInt();
-            switch (ctrl) {
+            mctrl = scanner.nextInt();
+            switch (mctrl) {
                 case 1:
                     doctorsDB();
                     break;
@@ -37,7 +37,7 @@ public class Main {
             System.out.println("Want to do something else?");
             System.out.println("1) Yes");
             System.out.println("2) No");
-            ctrl = scanner.nextInt();
+            mctrl = scanner.nextInt();
         }
 
 
