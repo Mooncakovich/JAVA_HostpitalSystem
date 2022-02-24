@@ -242,5 +242,8 @@ public static void deleteDrug(String name){
         DatabaseHandler dbHandler = new DatabaseHandler();
         dbHandler.showDrug();
     }
-
+public static void findDrugs(String name){
+        DatabaseHandler dbHandler = new DatabaseHandler();
+        dbHandler.findDrugs(name);
+    }
 }
