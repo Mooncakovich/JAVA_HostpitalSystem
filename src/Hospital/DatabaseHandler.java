@@ -138,6 +138,25 @@ public class DatabaseHandler extends Config {
             e.printStackTrace();
         }
     }
+    
+    public void findDrugs(String name){
+        String insert = "SELECT * FROM " + Constant.DRUGS_TABLE + " WHERE " + Constant.DRUGS_NAME + " = '"
+                + name + "'";
+        int i=0;
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(insert);
+            ResultSet reSt = prSt.executeQuery(insert);
+            System.out.println( "Name Cost PrescriptionForMedicine");
+            while (reSt.next()){
+                System.out.println(reSt.getString("Name") + " " + reSt.getString("Cost") + " " +
+                        reSt.getString("PrescriptionForMedicine"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void AddPatients(String firstName, String SureName,int age, String MedicalChamber, String MedicalInsurance, String Diagnosis){
         String insert = "INSERT INTO " + Constant.PATIENTS_TABLE+ "("+Constant.PATIENTS_FIRSTNAME + "," + Constant.PATIENTS_SURNAME + ","  + Constant.PATIENTS_AGE
