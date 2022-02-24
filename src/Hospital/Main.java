@@ -192,7 +192,7 @@ public class Main {
     }
     public static void findPatients(String name, String surname){
     DatabaseHandler dbHandler = new DatabaseHandler();
-    dbHandler.findPatient(name,surname);
+    dbHandler.findPatients(name,surname);
 }
 
     public static void drugsDB(){
