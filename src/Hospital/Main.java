@@ -29,8 +29,10 @@ public class Main {
                     break;
                 case 3:
                     patientsDB();
+                    break;
                 case 4:
                     System.exit(0);
+                    break;
             }
             System.out.println("Want to do something else?");
             System.out.println("1) Yes");
